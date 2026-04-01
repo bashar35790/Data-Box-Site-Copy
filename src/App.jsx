@@ -1,8 +1,13 @@
+import NavBar from "./components/ui/NavBar/NavBar";
+
 export default function App() {
   return (
     <>
-      <h1 className="">hi</h1>
-      <button className="btn btn-primary">click me</button>
+      <header>
+        <NavBar></NavBar>
+      </header>
+      <main></main>
+      <footer></footer>
     </>
   );
 }
