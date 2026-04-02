@@ -47,10 +47,8 @@ export default function Hero() {
               <p className="text-xs lg:text-sm">based on 1,000+ reviews</p>
             </div>
             <h1 className="max-w-225 mx-auto">
-              <span className="bg-main-linear bg-clip-text text-transparent">
-                AI-powered
-              </span>{" "}
-              analytics for teams that need answers now
+              <span className="linearText">AI-powered</span> analytics for teams
+              that need answers now
             </h1>
 
             <p className="max-w-155 mx-auto">
@@ -59,7 +57,7 @@ export default function Hero() {
             </p>
 
             {/* Cta*/}
-            <div className="flex gap-4">
+            <div className="flex max-md:flex-col gap-4">
               <PrimaryButton link={"#"} brand={true}>
                 Try It Free
               </PrimaryButton>

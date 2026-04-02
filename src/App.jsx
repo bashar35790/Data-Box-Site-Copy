@@ -1,4 +1,5 @@
 import Hero from "./components/sections/Hero/Hero";
+import Info from "./components/sections/Hero/Info/Info";
 import NavBar from "./components/ui/NavBar/NavBar";
 
 export default function App() {
@@ -9,6 +10,7 @@ export default function App() {
       </header>
       <main>
         <Hero></Hero>
+        <Info></Info>
       </main>
       <footer></footer>
     </>

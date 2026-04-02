@@ -17,6 +17,14 @@
         @apply w-11/12 max-w-7xl mx-auto py-12 md:py-16;
     }
 
+    header {
+        @apply flex flex-col text-center items-center justify-center gap-6  mb-8;
+    }
+
+    .linearText {
+        @apply bg-main-linear bg-clip-text text-transparent;
+    }
+
     h1,
     h2 {
         font-weight: 800;
