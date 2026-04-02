@@ -1,4 +1,5 @@
 import Achivements from "./components/sections/Achivements/Achivements";
+import Faq from "./components/sections/Faq/Faq";
 import Features from "./components/sections/Features/Features";
 import Hero from "./components/sections/Hero/Hero";
 import Info from "./components/sections/Hero/Info/Info";
@@ -21,6 +22,7 @@ export default function App() {
         <Features></Features>
         <Insights></Insights>
         <Achivements></Achivements>
+        <Faq></Faq>
       </main>
       <footer></footer>
     </>
