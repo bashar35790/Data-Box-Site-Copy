@@ -10,6 +10,7 @@ export default function HowItWorksCard({ card }) {
       "Google Sheets and Excel",
       "Databases",
     ],
+    ctaText = "Explore Connect →",
     ctaLink = "#",
     color = "",
   } = card;
@@ -64,7 +65,7 @@ export default function HowItWorksCard({ card }) {
 
           {/* Button */}
           <div className="card-actions mt-2">
-            <ButtonSm ctaLink={ctaLink}>Explore Connect →</ButtonSm>
+            <ButtonSm ctaLink={ctaLink}>{ctaText}</ButtonSm>
           </div>
         </div>
       </div>
