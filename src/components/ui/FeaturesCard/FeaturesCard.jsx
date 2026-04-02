@@ -35,7 +35,7 @@ export default function FeaturesCard({ card }) {
           <div
             onMouseEnter={handleMouseIn}
             onMouseOut={handleMouseOut}
-            className="absolute w-full h-full bg-main-linear p-8 z-20"
+            className="absolute w-full h-full bg-main-linear p-8 z-20 duration-300 ease-in"
           >
             <p className="text-5xl mb-3 text-white">"</p>
             <p className="text-white text-[18px] ">{hoverText}</p>
