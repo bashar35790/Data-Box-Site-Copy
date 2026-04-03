@@ -38,7 +38,7 @@ export default function MegaMenu() {
   }, []);
 
   return (
-    <div className="mega-menu-container flex items-center h-full relative z-50">
+    <div className="mega-menu-container flex items-center h-full z-50">
       <ul className="flex items-center gap-2 h-full menu-horizontal px-1 relative">
         <li className="h-full" onMouseEnter={() => handleMouseEnter('product')} onMouseLeave={handleMouseLeave}>
           <MenuItem title="Product" menuKey="product" activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
@@ -66,10 +66,9 @@ export default function MegaMenu() {
       </ul>
 
       {/* Mega Menu Dropdown Container */}
-      <div 
-        className={`absolute top-[100%] left-1/2 -translate-x-1/2 w-[90vw] max-w-[1100px] mt-2 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-300 ease-out origin-top ${
-          activeMenu && activeMenu !== 'ai' ? 'opacity-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 -translate-y-2 invisible pointer-events-none'
-        }`}
+      <div
+        className={`absolute top-[100%] left-1/2 -translate-x-1/2 w-[90vw] max-w-[1100px] mt-2 bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-300 ease-out origin-top max-h-[85vh] overflow-y-auto ${activeMenu && activeMenu !== 'ai' ? 'opacity-100 translate-y-0 visible pointer-events-auto' : 'opacity-0 -translate-y-2 invisible pointer-events-none'
+          }`}
         onMouseEnter={() => handleMouseEnter(activeMenu)}
         onMouseLeave={handleMouseLeave}
       >

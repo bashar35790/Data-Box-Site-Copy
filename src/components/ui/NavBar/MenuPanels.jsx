@@ -11,12 +11,12 @@ const Badge = ({ text }) => (
 
 export function ProductPanel() {
   const { items } = menuData.product;
-  
+
   return (
-    <div className="flex gap-8">
+    <div className="flex flex-col lg:flex-row gap-8">
       {/* Left side: Grid of features */}
       <div className="flex-[3]">
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {items.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -38,18 +38,18 @@ export function ProductPanel() {
           })}
         </div>
       </div>
-      
+
       {/* Right side: Promo */}
       <div className="flex-1 bg-purple-50 rounded-xl p-6 border border-purple-100 flex flex-col">
         <Badge text="New" />
         <h3 className="text-xl font-bold text-gray-900 mt-4 mb-2 flex items-center gap-2">
-          Meet Genie, your AI Analyst 
+          Meet Genie, your AI Analyst
           <span className="text-purple-600"><Sparkles size={24} /></span>
         </h3>
         <p className="text-sm text-gray-600 mb-6 flex-1">
           Ask questions about your performance and get clear, contextual answers in seconds so you can make decisions faster.
         </p>
-        
+
         <div className="mb-6 space-y-3">
           <div className="text-xs text-gray-500"><strong className="text-gray-700">BUILD</strong> Metrics, Dashboards, Datasets</div>
           <div className="text-xs text-gray-500"><strong className="text-gray-700">ANALYZE</strong> Data, Trends, Performance</div>
@@ -66,11 +66,11 @@ export function ProductPanel() {
 
 export function SolutionsPanel() {
   const { industry, role } = menuData.solutions;
-  
+
   return (
-    <div className="flex gap-8">
+    <div className="flex flex-col lg:flex-row gap-8">
       {/* Left Sidebar */}
-      <div className="w-56 flex flex-col gap-2">
+      <div className="w-full lg:w-56 flex lg:flex-col gap-2">
         <button className="text-left px-4 py-3 rounded-lg bg-gray-50 font-medium text-sm text-gray-900 flex justify-between items-center group">
           Who We're For
           <ArrowRight size={16} className="text-gray-400 group-hover:text-brand transition-colors" />
@@ -82,49 +82,49 @@ export function SolutionsPanel() {
       </div>
 
       <div className="flex-1 right-content">
-         <div className="grid grid-cols-5 gap-8">
-            <div className="col-span-2">
-               <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">BY INDUSTRY</h4>
-               <div className="grid grid-cols-2 gap-4">
-                  {industry.map((item, idx) => {
-                    const Icon = item.icon;
-                    return (
-                        <div key={idx} className="flex flex-col h-full">
-                           <div className={`h-24 rounded-lg mb-4 flex items-center justify-center ${idx === 0 ? 'bg-blue-50' : 'bg-orange-50'}`}>
-                              <Icon size={32} className={idx === 0 ? 'text-brand' : 'text-orange-500'} strokeWidth={1.5} />
-                           </div>
-                           <h3 className="font-semibold text-gray-900 text-sm mb-2">{item.title}</h3>
-                           <p className="text-gray-500 text-xs mb-4 flex-1">{item.description}</p>
-                           <a href={item.link} className="inline-block mt-auto text-center w-full py-2 px-4 rounded-md border border-gray-200 text-brand text-sm font-medium hover:border-brand transition-colors">
-                              Learn more
-                           </a>
-                        </div>
-                    )
-                  })}
-               </div>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+          <div className="col-span-1 lg:col-span-2">
+            <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">BY INDUSTRY</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {industry.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="flex flex-col h-full">
+                    <div className={`h-24 rounded-lg mb-4 flex items-center justify-center ${idx === 0 ? 'bg-blue-50' : 'bg-orange-50'}`}>
+                      <Icon size={32} className={idx === 0 ? 'text-brand' : 'text-orange-500'} strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-semibold text-gray-900 text-sm mb-2">{item.title}</h3>
+                    <p className="text-gray-500 text-xs mb-4 flex-1">{item.description}</p>
+                    <a href={item.link} className="inline-block mt-auto text-center w-full py-2 px-4 rounded-md border border-gray-200 text-brand text-sm font-medium hover:border-brand transition-colors">
+                      Learn more
+                    </a>
+                  </div>
+                )
+              })}
             </div>
+          </div>
 
-            <div className="col-span-3 border-l border-gray-100 pl-8">
-               <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">BY ROLE</h4>
-               <div className="grid grid-cols-3 gap-4">
-                  {role.map((item, idx) => {
-                    const Icon = item.icon;
-                    return (
-                        <div key={idx} className="flex flex-col h-full">
-                           <div className={`h-24 rounded-lg mb-4 flex items-center justify-center bg-indigo-50`}>
-                              <Icon size={32} className="text-indigo-600" strokeWidth={1.5} />
-                           </div>
-                           <h3 className="font-semibold text-gray-900 text-sm mb-2">{item.title}</h3>
-                           <p className="text-gray-500 text-xs mb-4 flex-1">{item.description}</p>
-                           <a href={item.link} className="inline-block mt-auto text-center w-full py-2 px-4 rounded-md border border-gray-200 text-brand text-sm font-medium hover:border-brand transition-colors">
-                              Learn more
-                           </a>
-                        </div>
-                    )
-                  })}
-               </div>
+          <div className="col-span-1 lg:col-span-3 border-t lg:border-t-0 lg:border-l border-gray-100 pl-0 lg:pl-8 pt-6 lg:pt-0">
+            <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">BY ROLE</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {role.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="flex flex-col h-full">
+                    <div className={`h-24 rounded-lg mb-4 flex items-center justify-center bg-indigo-50`}>
+                      <Icon size={32} className="text-indigo-600" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-semibold text-gray-900 text-sm mb-2">{item.title}</h3>
+                    <p className="text-gray-500 text-xs mb-4 flex-1">{item.description}</p>
+                    <a href={item.link} className="inline-block mt-auto text-center w-full py-2 px-4 rounded-md border border-gray-200 text-brand text-sm font-medium hover:border-brand transition-colors">
+                      Learn more
+                    </a>
+                  </div>
+                )
+              })}
             </div>
-         </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -132,11 +132,11 @@ export function SolutionsPanel() {
 
 export function IntegrationsPanel() {
   const { columns } = menuData.integrations;
-  
+
   return (
-    <div className="flex gap-8">
+    <div className="flex flex-col lg:flex-row gap-8">
       {/* 3 Columns */}
-      <div className="flex-[3] grid grid-cols-3 gap-6">
+      <div className="flex-[3] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {columns.map((col, idx) => {
           const Icon = col.icon;
           return (
@@ -160,18 +160,18 @@ export function IntegrationsPanel() {
               </ul>
               {idx === 0 && (
                 <div className="mt-8 pt-4 border-t border-gray-100">
-                   <a href="#" className="w-full py-2 px-4 rounded-md border border-gray-200 text-brand text-sm font-medium flex justify-center hover:border-brand transition-colors">
-                     See all 130+ Integrations
-                   </a>
+                  <a href="#" className="w-full py-2 px-4 rounded-md border border-gray-200 text-brand text-sm font-medium flex justify-center hover:border-brand transition-colors">
+                    See all 130+ Integrations
+                  </a>
                 </div>
               )}
             </div>
           );
         })}
       </div>
-      
+
       {/* Right Column */}
-      <div className="flex-[1] border-l border-gray-100 pl-8 flex flex-col gap-8">
+      <div className="flex-[1] border-t lg:border-t-0 lg:border-l border-gray-100 pl-0 lg:pl-8 pt-6 lg:pt-0 flex flex-col gap-8">
         <div>
           <h4 className="font-semibold text-gray-900 text-sm mb-2 flex items-center gap-2">
             <Sparkles size={16} className="text-gray-400" />
@@ -184,7 +184,7 @@ export function IntegrationsPanel() {
             Learn more <ArrowRight size={14} />
           </a>
         </div>
-        
+
         <div>
           <h4 className="font-semibold text-gray-900 text-sm mb-2 flex items-center gap-2">
             <DatabaseZap size={16} className="text-gray-400" />
@@ -204,11 +204,11 @@ export function IntegrationsPanel() {
 
 export function ResourcesPanel() {
   const { columns } = menuData.resources;
-  
+
   return (
-    <div className="flex gap-8">
+    <div className="flex flex-col lg:flex-row gap-8">
       {/* Columns */}
-      <div className="flex-[3] grid grid-cols-4 gap-6">
+      <div className="flex-[3] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {columns.map((col, idx) => {
           const Icon = col.icon;
           return (
@@ -230,14 +230,14 @@ export function ResourcesPanel() {
           );
         })}
       </div>
-      
+
       {/* Right Column: Blog Card */}
       <div className="flex-[1] bg-gray-50 rounded-xl p-6 border border-gray-100 flex flex-col">
         <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">LATEST FROM BLOG</h4>
         <div className="rounded-lg overflow-hidden mb-4 bg-gray-200 aspect-[16/9] relative">
           {/* Add a simple placeholder visual for the blog image */}
           <div className="absolute inset-0 bg-gradient-to-tr from-indigo-900 to-purple-800 flex items-center justify-center">
-             <Sparkles size={40} className="text-white/20" />
+            <Sparkles size={40} className="text-white/20" />
           </div>
         </div>
         <h3 className="font-semibold text-gray-900 text-sm mb-3">

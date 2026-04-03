@@ -79,12 +79,12 @@ export default function Hero() {
             {/* Item 3*/}
             <p className="text-xs lg:text-sm">based on 1,000+ reviews</p>
           </div>
-          <h1 className="max-w-225 mx-auto">
+          <h1 className="max-w-3xl mx-auto">
             <span className="linearText">AI-powered</span> analytics for teams
             that need answers now
           </h1>
 
-          <p className="max-w-155 mx-auto">
+          <p className="max-w-xl mx-auto">
             Turn business performance data into clear answers your team can
             understand, explain, and act on – instantly.
           </p>
@@ -126,7 +126,7 @@ export default function Hero() {
             </div>
 
             {/* Right Side: Feature cards panel */}
-            <div className="bg-white/95 backdrop-blur-md p-6 lg:p-8 md:p-5 rounded-2xl shadow-2xl w-[380px] lg:w-[440px] absolute right-2 lg:right-10 top-1/2 -translate-y-1/2 z-10 border border-gray-100">
+            <div className="bg-white/95 backdrop-blur-md p-6 lg:p-8 md:p-5 rounded-2xl shadow-2xl w-[340px] lg:w-[440px] absolute right-0 lg:right-10 md:right-2 top-1/2 -translate-y-1/2 z-10 border border-gray-100">
               <h2 className="text-xl lg:text-2xl font-bold text-gray-800 mb-6 text-center">
                 Explore Key Features
               </h2>
@@ -137,8 +137,8 @@ export default function Hero() {
                     key={idx}
                     onClick={() => setActiveFeature(idx)}
                     className={`group flex flex-col items-center justify-center p-3 rounded-xl border transition-all duration-300 hover:scale-105 ${activeFeature === idx
-                        ? "bg-purple-50 border-purple-200 shadow-md ring-1 ring-purple-400"
-                        : "bg-white border-gray-100 hover:bg-gray-50"
+                      ? "bg-purple-50 border-purple-200 shadow-md ring-1 ring-purple-400"
+                      : "bg-white border-gray-100 hover:bg-gray-50"
                       }`}
                   >
                     <span
@@ -233,14 +233,14 @@ export default function Hero() {
             </div>
 
             {/* Cards Slider Below Info */}
-            <div className="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-4 pt-2 px-4 -mx-4 hide-scroll">
+            <div className="flex overflow-x-auto snap-x snap-mandatory gap-3 pb-8 pt-4 px-6 md:px-4 -mx-4 hide-scroll relative">
               {features.map((feature, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveFeature(idx)}
                   className={`flex-shrink-0 snap-center w-[120px] h-[110px] flex flex-col items-center justify-center p-3 rounded-xl border transition-all duration-300 ${activeFeature === idx
-                      ? "bg-purple-50 border-purple-300 shadow-md transform scale-105 z-10"
-                      : "bg-white border-gray-100 opacity-70 hover:opacity-100"
+                    ? "bg-purple-50 border-purple-300 shadow-md transform scale-105 z-10"
+                    : "bg-white border-gray-100 opacity-70 hover:opacity-100"
                     }`}
                 >
                   <span className={`text-3xl mb-2 transition-all duration-300 ${activeFeature === idx ? "scale-110 grayscale-0" : "grayscale"}`}>
