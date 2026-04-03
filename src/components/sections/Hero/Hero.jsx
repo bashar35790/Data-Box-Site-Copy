@@ -1,5 +1,15 @@
 import { FaStar } from "react-icons/fa";
 import PrimaryButton from "../../ui/Button/PrimaryButton";
+import AIAnalyst from "../../../assets/hero-explore-key-feature-image/genie-chat-with-prompt-selection-and-floating-integrations-2x.png";
+import Dashboards from '../../../assets/hero-explore-key-feature-image/dashboards-2x.png';
+import Reports from '../../../assets/hero-explore-key-feature-image/reports-2x.png';
+import MetricsKPIs from "../../../assets/hero-explore-key-feature-image/metric-builder-2x.png";
+import GoalsOKRs from "../../../assets/hero-explore-key-feature-image/goals-2x.png";
+import Forecasts from "../../../assets/hero-explore-key-feature-image/forecasts-2x.png";
+import Mcp from "../../../assets/hero-explore-key-feature-image/mcp.png";
+import Integrations from "../../../assets/hero-explore-key-feature-image/integrations-2x.png";
+import DataPreparation from "../../../assets/hero-explore-key-feature-image/datasets-2x.png";
+
 
 export default function Hero() {
   return (
@@ -66,6 +76,89 @@ export default function Hero() {
 
             <p className="text-sm">No credit card needed · Free-forever plan</p>
           </header>
+          <div className="flex py-10 relative justify-start">
+            {/* image intarect base on the card */}
+            <div>
+                 <img src={AIAnalyst} alt="ai analysis img" className=" h-125 w-fill object-cover" />
+            </div>
+            {/* card intarection  */}
+            <div className="bg-white p-6 rounded-2xl shadow-lg w-fit absolute right-50 top-10 bottom-10">
+              {/* Card Title  */}
+              <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">
+                Explore Key Features
+              </h2>
+
+              {/* Feature Grid  */}
+              <div className="grid grid-cols-3 gap-4 mb-6 ">
+                {/* Feature Item  */}
+                <button className="flex flex-col items-center justify-center p-4 rounded-lg border border-gray-200 hover:bg-purple-50 transition">
+                  <span className="text-purple-500 text-2xl mb-1">🤖</span>
+                  <span className="text-sm font-medium text-gray-700">
+                    AI Analyst
+                  </span>
+                </button>
+
+                <button className="flex flex-col items-center justify-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
+                  <span className="text-gray-500 text-2xl mb-1">📊</span>
+                  <span className="text-sm font-medium text-gray-700">
+                    Dashboards
+                  </span>
+                </button>
+
+                <button className="flex flex-col items-center justify-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
+                  <span className="text-gray-500 text-2xl mb-1">📄</span>
+                  <span className="text-sm font-medium text-gray-700">
+                    Reports
+                  </span>
+                </button>
+
+                <button className="flex flex-col items-center justify-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
+                  <span className="text-gray-500 text-2xl mb-1">123</span>
+                  <span className="text-sm font-medium text-gray-700">
+                    Metrics & KPIs
+                  </span>
+                </button>
+
+                <button className="flex flex-col items-center justify-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
+                  <span className="text-gray-500 text-2xl mb-1">🎯</span>
+                  <span className="text-sm font-medium text-gray-700">
+                    Goals & OKRs
+                  </span>
+                </button>
+
+                <button className="flex flex-col items-center justify-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
+                  <span className="text-gray-500 text-2xl mb-1">📈</span>
+                  <span className="text-sm font-medium text-gray-700">
+                    Forecasts
+                  </span>
+                </button>
+
+                <button className="flex flex-col items-center justify-center p-4 rounded-lg border border-gray-200 hover:bg-purple-50 transition">
+                  <span className="text-purple-500 text-2xl mb-1">💾</span>
+                  <span className="text-sm font-medium text-gray-700">MCP</span>
+                </button>
+
+                <button className="flex flex-col items-center justify-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
+                  <span className="text-gray-500 text-2xl mb-1">🔌</span>
+                  <span className="text-sm font-medium text-gray-700">
+                    Integrations
+                  </span>
+                </button>
+
+                <button className="flex flex-col items-center justify-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition">
+                  <p className="text-gray-400 text-2xl mb-1">🛠️</p>
+                  <p className="text-sm font-medium text-gray-500">
+                    Data preparation
+                  </p>
+                </button>
+              </div>
+
+              {/* - Call to Action Button  */}
+              <button className="w-full btn bg-brand text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
+                Try It Free
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </>
