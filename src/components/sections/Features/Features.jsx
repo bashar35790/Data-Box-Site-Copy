@@ -66,7 +66,11 @@ const cardContents = [
 export default function Features() {
   return (
     <>
-      <section id="Features" className={`bg-[url(${backgroundImage})]`}>
+      <section
+        id="Features"
+        className={`bg-cover bg-center`}
+        style={{ backgroundImage: `${backgroundImage}` }}
+      >
         <div className="cssContainer ">
           <header className="header">
             <h2 className="max-w-200 mx-auto ">
