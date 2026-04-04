@@ -7,11 +7,11 @@ import Info from "./components/sections/Hero/Info/Info";
 import HowItWorks from "./components/sections/HowItWorks/HowItWorks";
 import Insights from "./components/sections/Insights/Insights";
 import InteractiveCards from "./components/sections/InteractiveCards/InteractiveCards";
+import Testimonials from "./components/sections/Testimonial/Testimonial";
 import WhoItsFor from "./components/sections/WhoItsFor/WhoItsFor";
 import WhyUs from "./components/sections/WhyUs/WhyUs";
 import Footer from "./components/ui/Footer/Footer";
 import Navbar from "./components/ui/NavBar/NavBar";
-
 
 export default function App() {
   return (
@@ -26,8 +26,8 @@ export default function App() {
         <WhyUs></WhyUs>
         <HowItWorks></HowItWorks>
         <Features></Features>
-        <WhoItsFor></WhoItsFor>
         <InteractiveCards></InteractiveCards>
+        <Testimonials></Testimonials>
         <Insights></Insights>
         <Achivements></Achivements>
         <Faq></Faq>
