@@ -181,3 +181,89 @@ const CardContent = ({ card }) => (
 );
 
 export default InteractiveCards;
+import PrimaryButton from "../../ui/Button/PrimaryButton";
+import HowItWorksCard from "../../ui/HowItWorksCard/HowItWorksCard";
+
+const cardInfo = [
+  {
+    icon: "",
+    title: "Connect",
+    description:
+      "Connect all your tools, so your data lives in one place, and not in silos.",
+    features: [
+      "130+ one-click integrations",
+      "Google Sheets and Excel",
+      "Databases",
+    ],
+    ctaText: "Explore Connect →",
+    ctaLink: "#",
+    color: "purple",
+  },
+  {
+    icon: "",
+    title: "Prepare",
+    description:
+      "Clean, standardize, and merge raw data for deeper data analysis.",
+    features: [
+      "Data Preparation (Datasets)",
+      "Filters & Calculations",
+      "Merge Datasets",
+    ],
+    ctaText: "Explore Prepare →",
+    ctaLink: "#",
+    color: "red",
+  },
+  {
+    icon: "",
+    title: "Visualize",
+    description:
+      "Easily build beautiful dashboards with clear data visualizations.",
+    features: [
+      "Drag-and-drop designer",
+      "20+ visualization types",
+      "200+ pre-built templates",
+      "TV and mobile views",
+    ],
+    ctaLink: "#",
+    ctaText: "Explore Visualize →",
+    color: "blue",
+  },
+  {
+    icon: "",
+    title: "Analyze",
+    description: "Understand how your business is performing.",
+    features: [
+      "Drill-down to row-level data",
+      "Compare periods",
+      "Filter by dimension",
+      "Get AI-powered insights and summaries",
+    ],
+    ctaLink: "#",
+    ctaText: "Explore Analyze →",
+    color: "orange",
+  },
+  {
+    icon: "",
+    title: "Report & Automate",
+    description:
+      "Automatically share data with your team, in the format you prefer.",
+    features: [
+      "Page and Slide reports",
+      "Performance updates sent to Slack, email, or mobile",
+      "Share links",
+    ],
+    ctaLink: "#",
+    ctaText: "Explore Report & Automate →",
+    color: "purple",
+  },
+  {
+    icon: "",
+    title: "Plan",
+    description:
+      "Use your data to make better decisions and set better targets.",
+    features: ["Set and track goals", "Forecast future results"],
+    ctaLink: "#",
+    ctaText: "Explore Connect →",
+    color: "green",
+  },
+];
