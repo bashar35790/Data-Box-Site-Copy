@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ButtonSm from "../../ui/Button/ButtonSm";
 import { Briefcase, Presentation, Megaphone, Users } from "lucide-react";
+import PrimaryButton from "../../ui/Button/PrimaryButton";
 
 const cardData = [
   {
@@ -147,6 +148,11 @@ const InteractiveCards = () => {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Cta*/}
+        <div className="">
+          <PrimaryButton brand={true}>Try It Free</PrimaryButton>
         </div>
       </div>
     </section>
