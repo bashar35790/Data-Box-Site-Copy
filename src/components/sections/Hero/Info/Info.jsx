@@ -32,8 +32,8 @@ const cardInfo = [
 export default function Info() {
   return (
     <>
-      <section className="">
-        <div className="cssContainer">
+      <section id="info" className="">
+        <div className="cssContainer pt-0">
           <header className="header">
             <h2 className="max-w-175">
               <span className="linearText">

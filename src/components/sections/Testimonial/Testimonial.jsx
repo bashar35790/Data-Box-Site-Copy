@@ -111,6 +111,11 @@ const TestimonialCard = ({ testimonial }) => {
 export default function Testimonials() {
   return (
     <section id="testimonial" className="">
+      <style>{`
+        .mySwiper .swiper-wrapper {
+          transition-timing-function: linear !important;
+        }
+      `}</style>
       <div className="cssContainer pb-0">
         {/* Section Heading */}
 
@@ -128,9 +133,10 @@ export default function Testimonials() {
         slidesPerView={1} // mobile default
         loop={true} // infinite loop
         autoplay={{
-          delay: 4000,
+          delay: 10,
           disableOnInteraction: false,
         }}
+        speed={5000}
         pagination={{
           clickable: true,
           dynamicBullets: true, // matching the compact dots in image

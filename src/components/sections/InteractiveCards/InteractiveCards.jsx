@@ -1,43 +1,17 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ButtonSm from "../../ui/Button/ButtonSm";
-import {
-  Briefcase,
-  ChartColumnIncreasing,
-  Megaphone,
-  Users,
-  UserStar,
-} from "lucide-react";
+import { Briefcase, Presentation, Megaphone, Users } from "lucide-react";
 
 const cardData = [
   {
     id: 1,
-    title: "Business Analysts",
-    color: "bg-purple-500",
-    textColor: "text-white",
-    icon: <ChartColumnIncreasing size={80} />,
-    details: [
-      "Build dashboards and reports much faster than with enterprise solutions",
-      "Remove yourself as the bottleneck and empower your team",
-      "Organize your company's performance by team",
-    ],
-    ctaLink: "#",
-  },
-  {
-    id: 2,
-    title: "Executives",
-    color: "bg-gray-200",
-    textColor: "text-gray-800",
-    icon: <Briefcase size={80} />,
-    details: ["High-level overview", "Strategic planning", "Real-time KPIs"],
-    ctaLink: "#",
-  },
-  {
-    id: 3,
     title: "Functional Leaders",
-    color: "bg-blue-100",
-    textColor: "text-blue-800",
-    icon: <UserStar size={80} />,
+    color: "bg-[#E8EFFF]",
+    textColor: "text-[#1E293B]",
+    iconColor: "text-blue-600",
+    icon: <Users size={50} />,
+    description: "Align your business to the outcomes that matter.",
     details: [
       "Departmental tracking",
       "Resource allocation",
@@ -46,126 +20,164 @@ const cardData = [
     ctaLink: "#",
   },
   {
-    id: 4,
-    title: "Team Contributors",
-    color: "bg-green-100",
-    textColor: "text-green-800",
-    icon: <Users size={80} />,
-    details: ["Task management", "Individual metrics", "Collaboration tools"],
+    id: 2,
+    title: "Executives",
+    color: "bg-[#8B5CF6]",
+    textColor: "text-white",
+    iconColor: "text-white",
+    icon: <Briefcase size={60} />,
+    description: "Deliberately manage your business performance.",
+    details: [
+      "Align your business to the outcomes that matter with OKRs.",
+      "Keep teams focused on what matters with shared goals and trusted data.",
+      "Easily see your entire company's performance in one place.",
+      "Get real-time updates and alerts on key metrics.",
+    ],
     ctaLink: "#",
   },
   {
-    id: 5,
+    id: 3,
+    title: "Business Analysts",
+    color: "bg-[#F3E8FF]",
+    textColor: "text-[#1E293B]",
+    iconColor: "text-purple-500",
+    icon: <Presentation size={50} />,
+    description: "Remove bottlenecks and empower your team.",
+    details: [
+      "Build dashboards faster",
+      "Organize performance",
+      "Real-time insights",
+    ],
+    ctaLink: "#",
+  },
+  {
+    id: 4,
     title: "Agencies & Consultants",
-    color: "bg-orange-100",
-    textColor: "text-orange-800",
-    icon: <Megaphone size={80} />,
+    color: "bg-[#FFF2E2]",
+    textColor: "text-[#1E293B]",
+    iconColor: "text-orange-500",
+    icon: <Megaphone size={50} />,
+    description: "Scale your client reporting and insights.",
     details: ["Client reporting", "External access", "White-label solutions"],
     ctaLink: "#",
   },
 ];
 
 const InteractiveCards = () => {
-  const [activeId, setActiveId] = useState(1);
+  const [activeId, setActiveId] = useState(2);
 
   return (
-    <>
-      <section id="whoItsFor" className="">
-        <div className="cssContainer">
-          <header className="header">
-            <h2 className="max-w-200 mx-auto ">
-              <span className="linearText">Self-serve analytics </span>
-              for people who are tired of doing reporting
-            </h2>
-          </header>
+    <section id="interactiveCards" className="">
+      <div className="cssContainer">
+        <header className="header"></header>
+        {/* Content*/}
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Layout: Vertical stack on mobile/tablet, Horizontal on desktop */}
+          <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[600px]">
+            {cardData.map((card) => {
+              const isActive = activeId === card.id;
 
-          {/* Cards*/}
-
-          <div className="w-full bg-white p-4 md:p-8 font-sans">
-            <div className="flex flex-col md:flex-row gap-4 h-auto md:h-[500px]">
-              {cardData.map((card) => {
-                const isActive = activeId === card.id;
-
-                return (
-                  <motion.div
-                    key={card.id}
-                    layout
-                    whileHover={{ scale: 1.02 }}
-                    transition={{
-                      layout: { duration: 0.4, ease: "easeInOut" },
-                    }}
-                    onClick={() => setActiveId(card.id)}
-                    className={`relative cursor-pointer rounded-2xl p-6 overflow-hidden flex flex-col transition-all duration-500 ease-in-out ${
-                      card.color
-                    } ${isActive ? "md:flex-[3]" : "flex-1"}`}
-                  >
-                    {/* Title */}
+              return (
+                <motion.div
+                  key={card.id}
+                  layout
+                  onClick={() => setActiveId(card.id)}
+                  className={`relative cursor-pointer rounded-3xl p-6 md:p-10 overflow-hidden flex flex-col transition-all duration-500 ease-in-out ${
+                    card.color
+                  } ${isActive ? "md:flex-[3]" : "md:flex-1"}`}
+                >
+                  {/* Header: Title and Top-Right Icon */}
+                  <div className="flex justify-between items-start">
                     <h3
-                      className={`text-lg md:text-xl font-bold mb-4 ${card.textColor}`}
+                      className={`text-xl md:text-2xl font-bold leading-tight max-w-[140px] ${card.textColor}`}
                     >
                       {card.title}
                     </h3>
 
-                    {/* Content */}
-                    <AnimatePresence>
-                      {isActive && (
-                        <motion.div
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.3, delay: 0.1 }}
-                          className="mt-2 md:mt-4"
-                        >
-                          <p
-                            className={`mb-3 md:mb-4 text-sm md:text-base font-semibold ${card.textColor} opacity-90`}
-                          >
-                            Remove bottlenecks, ensure accuracy, and build
-                            faster.
-                          </p>
-
-                          <ul
-                            className={`space-y-2 md:space-y-3 ${card.textColor}`}
-                          >
-                            {card.details.map((item, idx) => (
-                              <li
-                                key={idx}
-                                className="flex items-start gap-2 text-xs md:text-sm opacity-90"
-                              >
-                                <span className="mt-1">•</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-
-                          <ButtonSm
-                            ctaLink={card.ctaLink}
-                            className={"w-fit mt-6"}
-                          >
-                            Learn More →
-                          </ButtonSm>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-
-                    {/* Icon */}
+                    {/* Icon on the Right:
+                      1. Visible on mobile (since all are "open")
+                      2. On Desktop, only visible if isActive is true
+                  */}
                     <div
-                      className={`mt-auto flex ${
-                        isActive ? "justify-end" : "justify-center"
-                      }`}
+                      className={`transition-opacity duration-300 ${card.iconColor}
+                    ${isActive ? "opacity-100 block" : "opacity-0 md:hidden lg:hidden"}
+                    block`} // 'block' ensures it shows on mobile/tablet
                     >
-                      <span className="text-4xl md:text-6xl grayscale brightness-50 opacity-40">
-                        {card.icon}
-                      </span>
+                      {card.icon}
                     </div>
-                  </motion.div>
-                );
-              })}
-            </div>
+                  </div>
+
+                  {/* Content: Visible on Mobile, Conditional on Desktop */}
+                  <div
+                    className={`mt-10 flex-1 ${isActive ? "block" : "hidden md:hidden"} md:block`}
+                  >
+                    {/* Mobile/Tablet Static View */}
+                    <div className="md:hidden">
+                      <CardContent card={card} />
+                    </div>
+
+                    {/* Desktop Animated View */}
+                    <div className="hidden md:block">
+                      <AnimatePresence mode="wait">
+                        {isActive && (
+                          <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -10 }}
+                            transition={{ duration: 0.4 }}
+                          >
+                            <CardContent card={card} />
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  </div>
+
+                  {/* Optional: Icon at the bottom for CLOSED cards on Desktop (per original image) */}
+                  {/* If you want NO icons at all when closed, simply delete this <div> below */}
+                  {!isActive && (
+                    <div
+                      className={`mt-auto hidden md:flex justify-center ${card.iconColor} opacity-40 grayscale hover:grayscale-0 transition-all`}
+                    >
+                      {card.icon}
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
+
+const CardContent = ({ card }) => (
+  <>
+    <p
+      className={`text-lg md:text-xl font-bold mb-6 ${card.textColor} leading-snug`}
+    >
+      {card.description}
+    </p>
+    <ul className={`space-y-4 ${card.textColor}`}>
+      {card.details.map((item, idx) => (
+        <li key={idx} className="flex items-start gap-3">
+          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-current shrink-0 opacity-60" />
+          <span className="text-sm md:text-base font-medium opacity-90 leading-relaxed">
+            {item}
+          </span>
+        </li>
+      ))}
+    </ul>
+    <div className="mt-10">
+      <ButtonSm
+        ctaLink={card.ctaLink}
+        className="bg-white/30 backdrop-blur-sm hover:bg-white/50 text-white border-none py-3 px-6 rounded-xl font-bold transition-all"
+      >
+        Learn More →
+      </ButtonSm>
+    </div>
+  </>
+);
 
 export default InteractiveCards;

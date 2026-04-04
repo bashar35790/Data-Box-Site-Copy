@@ -118,9 +118,9 @@ export default function Hero() {
           onMouseLeave={() => setIsHovered(false)}
         >
           {/* Desktop & Tablet Layout (Image left, Features right floating) */}
-          <div className="hidden md:block relative w-full h-[600px] lg:h-[700px] rounded-3xl overflow-hidden pt-4">
-            {/* Left Side: Images */}
-            <div className="absolute inset-0 right-[40%] lg:right-[45%] flex items-center justify-start p-4 lg:p-8">
+          <div className="hidden md:block relative w-full h-[600px] lg:h-[700px] rounded-3xl overflow-visible pt-4">
+            {/* Left Side: Images - SIGNIFICANTLY ENLARGED with more overlap */}
+            <div className="absolute inset-0 right-[15%] lg:right-[20%] flex items-center justify-start p-4 lg:p-8 overflow-visible">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeFeature}
@@ -131,13 +131,29 @@ export default function Hero() {
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                   alt={features[activeFeature].title}
                   loading="lazy"
-                  className="w-full h-auto max-h-[90%] object-contain object-left drop-shadow-xl"
+                  className="w-[140%] h-auto max-h-[110%] object-contain object-left"
+                  style={{
+                    filter:
+                      "drop-shadow(0 30px 40px rgba(0, 0, 0, 0.2)) drop-shadow(0 15px 20px rgba(0, 0, 0, 0.15))",
+                  }}
                 />
               </AnimatePresence>
             </div>
 
-            {/* Right Side: Feature cards panel */}
-            <div className="bg-white/95 backdrop-blur-md p-6 lg:p-8 md:p-5 rounded-2xl shadow-2xl w-[340px] lg:w-[440px] absolute right-0 lg:right-10 md:right-2 top-1/2 -translate-y-1/2 z-10 border border-gray-100 flex flex-col items-center">
+            {/* Right Side: Feature cards panel - SIGNIFICANT OVERLAP */}
+            <div
+              className="bg-white/95 backdrop-blur-md p-6 lg:p-8 md:p-5 rounded-2xl w-[340px] lg:w-[440px] absolute right-0 lg:right-10 md:right-2 top-1/2 -translate-y-1/2 z-20 border border-gray-100 flex flex-col items-center"
+              style={{
+                boxShadow: `
+                  0 35px 60px rgba(0, 0, 0, 0.2),
+                  0 25px 40px rgba(0, 0, 0, 0.15),
+                  0 0 120px rgba(139, 92, 246, 0.25),
+                  0 0 60px rgba(168, 85, 247, 0.18),
+                  0 0 30px rgba(217, 70, 239, 0.12),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.6)
+                `,
+              }}
+            >
               <h3 className="text-xl lg:text-2xl font-bold text-gray-800 mb-6 text-center">
                 Explore Key Features
               </h3>
@@ -206,7 +222,7 @@ export default function Hero() {
             `}</style>
 
             {/* Image Container Top */}
-            <div className="w-full h-[300px] sm:h-[400px] relative rounded-2xl bg-gray-50/50 flex items-center justify-center">
+            <div className="w-full h-[300px] sm:h-[400px] relative rounded-2xl bg-gray-50/50 flex items-center justify-center overflow-visible">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeFeature}
@@ -217,7 +233,11 @@ export default function Hero() {
                   transition={{ duration: 0.3, ease: "easeOut" }}
                   alt={features[activeFeature].title}
                   loading="lazy"
-                  className="max-w-[90%] max-h-[90%] object-contain drop-shadow-md"
+                  className="max-w-[95%] max-h-[95%] object-contain"
+                  style={{
+                    filter:
+                      "drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15)) drop-shadow(0 10px 12px rgba(0, 0, 0, 0.1))",
+                  }}
                 />
               </AnimatePresence>
             </div>
