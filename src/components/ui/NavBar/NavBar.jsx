@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router";
 import Logo from "../../../assets/logo.svg";
 import { Sparkles, Menu as MenuIcon, X } from "lucide-react";
 import MegaMenu from "./MegaMenu";
@@ -26,9 +27,9 @@ export default function NavBar() {
 
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <a href="/" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <img src={Logo} alt="Logo" className="w-32" />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Mega Menu Navigation */}
@@ -159,11 +160,10 @@ export default function NavBar() {
                 </details>
               </div>
 
-              {/* Pricing */}
               <div className="py-2 border-b border-gray-50">
-                <a href="#" className="flex items-center font-medium text-gray-900 py-2">
+                <Link to="/pricing" className="flex items-center font-medium text-gray-900 py-2">
                   Pricing
-                </a>
+                </Link>
               </div>
 
               {/* Mobile Actions */}

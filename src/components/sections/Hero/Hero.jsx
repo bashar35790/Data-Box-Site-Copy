@@ -12,7 +12,7 @@ import Forecasts from "../../../assets/hero-explore-key-feature-image/forecasts-
 import Mcp from "../../../assets/hero-explore-key-feature-image/mcp.png";
 import Integrations from "../../../assets/hero-explore-key-feature-image/integrations-2x.png";
 import DataPreparation from "../../../assets/hero-explore-key-feature-image/datasets-2x.png";
-import HeroBg from "../../../assets/bg-data-box.png";
+import HeroBg from "../../../assets/data-workflow.png";
 import {
   BrainCog,
   ChartColumnIncreasing,
@@ -53,7 +53,7 @@ export default function Hero() {
   }, [isHovered]);
 
   return (
-    <section id="Hero" className={`overflow-hidden pt-20`}
+    <section id="Hero" className={`overflow-hidden pt-16`}
       style={{
         backgroundImage: `url(${HeroBg})`,
         backgroundSize: "cover",
@@ -61,7 +61,7 @@ export default function Hero() {
         backgroundRepeat: "no-repeat",
       }}>
       <div className="cssContainer">
-        <header className="grid place-items-center gap-6 text-center">
+        <header className="grid place-items-center gap-6 text-center max-md:text-left">
           {/* Icons*/}
           <div className="flex items-center gap-4">
             {/* Item 1*/}
@@ -97,25 +97,25 @@ export default function Hero() {
             {/* Item 3*/}
             <p className="text-xs lg:text-sm">based on 1,000+ reviews</p>
           </div>
-          <h1 className="max-w-220 mx-auto">
-            <span className="linearText">AI-powered</span> analytics for teams
+          <h1 className="max-w-220 mx-auto max-md:text-left">
+            <span className="linearText max-md:text-left">AI-powered</span> analytics for teams
             that need answers now
           </h1>
 
-          <p className="max-w-xl mx-auto">
+          <p className="max-w-xl mx-auto max-md:text-left">
             Turn business performance data into clear answers your team can
             understand, explain, and act on – instantly.
           </p>
 
           {/* Cta*/}
-          <div className="flex max-md:flex-col gap-4">
+          <div className="flex gap-4">
             <PrimaryButton link={"#"} brand={true}>
               Try It Free
             </PrimaryButton>
             <PrimaryButton link={"#"}>Book a Demo</PrimaryButton>
           </div>
 
-          <p className="text-sm">No credit card needed · Free-forever plan</p>
+          <p className="text-sm w-full max-md:text-left">No credit card needed · Free-forever plan</p>
         </header>
 
         {/* Interactive Feature Section */}
