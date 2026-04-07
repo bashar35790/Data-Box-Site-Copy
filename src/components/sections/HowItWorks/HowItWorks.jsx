@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import PrimaryButton from "../../ui/Button/PrimaryButton";
 import HowItWorksCard from "../../ui/HowItWorksCard/HowItWorksCard";
-import HowItWorksBg from "../../../assets/bg-data-box.png"
+import HowItWorksBg from "../../../assets/data-workflow.png"
 
 const cardInfo = [
   {
