@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../../assets/logo.svg";
 import { Sparkles, Menu as MenuIcon, X } from "lucide-react";
 import MegaMenu from "./MegaMenu";
 import { menuData } from "./data";
-import PrimaryButton from "../Button/PrimaryButton";
 
 export default function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   return (
     <>
-      <nav className="fixed top-0 z-50 to-0% left-0 right-0 ">
+      <nav className={`fixed top-0 z-50 left-0 right-0 transition-all duration-300 ${isScrolled ? "bg-white" : "bg-transparent"
+        }`}>
         <div className="w-11/12 max-w-7xl mx-auto flex items-center justify-between h-20">
 
           {/* Logo */}
