@@ -2,11 +2,11 @@ import React from 'react';
 import { Check, Sparkles, Infinity as InfinityIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const PricingCard = ({ 
-  plan, 
-  billingCycle, 
-  isPopular, 
-  isBestValue 
+const PricingCard = ({
+  plan,
+  billingCycle,
+  isPopular,
+  isBestValue
 }) => {
   const {
     name,
@@ -50,12 +50,11 @@ const PricingCard = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className={`relative flex flex-col p-10 bg-white rounded-[2.5rem] shadow-2xl transition-all duration-300 hover:scale-[1.03] flex-1 min-w-[320px] ${
-        isPopular ? 'border-[3px] border-[#a855f7] scale-[1.02]' : ''
-      }`}
+      className={`relative flex flex-col p-10 bg-white rounded-[2.5rem] shadow-2xl transition-all duration-300 hover:scale-[1.03] flex-1 min-w-[320px] ${isPopular ? 'border-[3px] border-[#a855f7] scale-[1.02]' : ''
+        }`}
     >
       {/* Badges */}
-      <div className="absolute top-8 right-8 flex flex-col gap-2 items-end">
+      <div className="absolute top-4 right-4 flex flex-col gap-2 items-end">
         {isPopular && (
           <span className="px-4 py-1 text-xs font-black text-white bg-[#a855f7] rounded-md uppercase tracking-wide">
             Most popular
@@ -70,12 +69,11 @@ const PricingCard = ({
 
       {/* Header */}
       <div className="mb-8">
-        <h3 className={`text-5xl font-extrabold mb-4 ${
-          name === 'Free' ? 'text-[#22c55e]' : 
-          name === 'Pro' || name.includes('Starter') ? 'text-[#3b82f6]' : 
-          name === 'Growth' || name.includes('Growth') ? 'text-[#1e293b]' : 
-          'text-[#1e293b]'
-        }`}>
+        <h3 className={`text-2xl font-extrabold mb-4 ${name === 'Free' ? 'text-[#22c55e]' :
+          name === 'Pro' || name.includes('Starter') ? 'text-[#3b82f6]' :
+            name === 'Growth' || name.includes('Growth') ? 'text-[#1e293b]' :
+              'text-[#1e293b]'
+          }`}>
           {name}
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed font-medium">
@@ -94,7 +92,7 @@ const PricingCard = ({
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="text-8xl font-black tracking-tighter"
+                className="text-5xl font-normal tracking-tighter"
               >
                 {price}
               </motion.span>
@@ -108,7 +106,7 @@ const PricingCard = ({
           </div>
         </div>
         <div className="mt-6">
-          <p className="font-extrabold text-[#22c55e] text-lg">{dataSources}</p>
+          <p className="font-bold text-[#22c55e] text-lg">{dataSources}</p>
           {additionalPrice && (
             <p className="text-gray-600 text-sm mt-1 font-bold">
               {additionalPrice}
@@ -118,12 +116,12 @@ const PricingCard = ({
       </div>
 
       {/* CTAs */}
-      <div className="flex gap-3 mb-8">
-        <button className={`flex-1 py-3 px-4 rounded-xl font-bold transition-all duration-200 cursor-pointer ${ctaClasses[ctaType] || ctaClasses.primary}`}>
+      <div className="flex gap-2 mb-8">
+        <button className={`flex-1 py-2 px-3 rounded-xl text-sm transition-all duration-200 cursor-pointer ${ctaClasses[ctaType] || ctaClasses.primary}`}>
           {cta}
         </button>
         {ctaSecondary && (
-          <button className="flex-1 py-3 px-4 border-2 border-transparent text-blue-600 font-bold hover:text-blue-700 transition-all duration-200 cursor-pointer">
+          <button className="flex-1 py-2 px-3 border-2 border-transparent text-blue-600 text-sm hover:text-blue-700 transition-all duration-200 cursor-pointer">
             {ctaSecondary}
           </button>
         )}
