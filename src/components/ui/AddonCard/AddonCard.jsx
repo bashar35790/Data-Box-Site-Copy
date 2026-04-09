@@ -1,63 +1,55 @@
 import React from "react";
 
-const AddonCard = () => {
+const AddonCard = ({ card }) => {
+  const { icon = "", price = "", title = "", body = "", catLink = "" } = card;
   return (
-    <div className="card w-full max-w-md bg-base-100 shadow-xl border border-base-200">
+    <div className="card w-full max-w-md bg-base-100 shadow-md border border-gray-500/30">
       <div className="card-body p-8">
         {/* Header Section */}
         <div className="flex justify-between items-start">
           <div className="text-primary">
-            {/* Paint Roller Icon */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect width="16" height="6" x="2" y="2" rx="2" />
-              <path d="M10 8v10" />
-              <rect width="4" height="4" x="8" y="18" rx="1" />
-            </svg>
-          </div>
+            {/* Card Icon */}
 
-          <div className="text-right">
-            <div className="flex items-start justify-end">
-              <span className="text-sm font-bold mt-1">$</span>
-              <span className="text-3xl font-extrabold tracking-tight text-base-content">
-                200
-              </span>
-              <span className="text-sm text-base-content/60 self-center ml-1">
-                /month
-              </span>
-            </div>
-            <p className="text-xs text-base-content/50 font-medium mt-1">
-              billed yearly
-            </p>
+            {icon}
           </div>
+          {price === "custom pricing" ? (
+            <div className="text-right">
+              <div className="flex items-start justify-end">
+                <p className="text-md font-semibold text-base-content/60 self-center ml-1">
+                  {price}
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div className="text-right">
+              <div className="flex items-start justify-end">
+                <span className="text-sm font-bold mt-1">$</span>
+                <span className="text-xl font-semibold tracking-tight text-base-content">
+                  {price}
+                </span>
+                <span className="text-sm text-base-content/60 self-center ml-1">
+                  /month
+                </span>
+              </div>
+              <p className="text-xs text-base-content/50 font-medium mt-1">
+                billed yearly
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Title */}
-        <h2 className="card-title text-xl font-bold mt-6 mb-2">
-          Branding & White-labeling
-        </h2>
+        <h3 className="card-title text-xl font-bold mt-6 mb-2">{title}</h3>
 
         {/* Description */}
         <p className="text-base-content/70 leading-relaxed text-[15px]">
-          Create an on-brand experience by white-labeling your Databox Account.
-          Allow users to login, view dashboards, and receive emails with your
-          company's branding. Perfect if you plan to resell Databox to your
-          clients.
+          {body}
         </p>
 
         {/* Footer Link */}
         <div className="card-actions mt-8">
           <a
-            href="#"
+            href={catLink}
             className="text-primary font-semibold text-sm hover:underline transition-all"
           >
             Learn more
