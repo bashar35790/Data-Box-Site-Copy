@@ -275,6 +275,7 @@ export default function NavBar() {
                 <Link
                   to="/pricing"
                   className="flex items-center font-medium text-gray-900 py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Pricing
                 </Link>
