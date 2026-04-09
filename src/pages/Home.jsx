@@ -11,19 +11,19 @@ import Testimonials from "../components/sections/Testimonial/Testimonial";
 import WhyUs from "../components/sections/WhyUs/WhyUs";
 
 export default function Home() {
-    return (
-        <>
-            <Hero />
-            <Info />
-            <Demo />
-            <WhyUs />
-            <HowItWorks />
-            <Features />
-            <InteractiveCards />
-            <Testimonials />
-            <Insights />
-            <Achivements />
-            <Faq />
-        </>
-    );
+  return (
+    <>
+      <Hero />
+      <Info />
+      <Demo />
+      <WhyUs />
+      <HowItWorks />
+      <Features />
+      <InteractiveCards />
+      <Testimonials />
+      <Insights />
+      <Achivements />
+      <Faq />
+    </>
+  );
 }

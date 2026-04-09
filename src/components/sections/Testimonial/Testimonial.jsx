@@ -108,7 +108,7 @@ const TestimonialCard = ({ testimonial }) => {
 
 // --- Main Carousel Component ---
 
-export default function Testimonials() {
+export default function Testimonials({ heading = true }) {
   return (
     <section id="testimonial" className="">
       <style>{`
@@ -118,12 +118,13 @@ export default function Testimonials() {
       `}</style>
       <div className="cssContainer pb-0">
         {/* Section Heading */}
-
-        <header className="header">
-          <h2 className="text-center text-4xl md:text-5xl font-extrabold text-gray-950 mb-16 tracking-tight">
-            Why customers <span className="linearText">love Databox</span>
-          </h2>
-        </header>
+        {heading && (
+          <header className="header">
+            <h2 className="text-center text-4xl md:text-5xl font-extrabold text-gray-950 mb-16 tracking-tight">
+              Why customers <span className="linearText">love Databox</span>
+            </h2>
+          </header>
+        )}
       </div>
       {/* Carousel Container */}
       <Swiper
