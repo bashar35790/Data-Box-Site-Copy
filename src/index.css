@@ -4,50 +4,75 @@
 @plugin "daisyui";
 
 @theme {
-    --background-image-main-linear: linear-gradient(90deg,
-            rgba(142, 82, 197, 1) 0%,
-            rgba(210, 107, 130, 1) 100%);
-    --color-brand: #4d71f1;
-    --color-brandHover: #405ed1;
-    --color-white: #ffffff;
-
+  --background-image-main-linear: linear-gradient(
+    90deg,
+    rgba(142, 82, 197, 1) 0%,
+    rgba(210, 107, 130, 1) 100%
+  );
+  --color-brand: #4d71f1;
+  --color-brandHover: #405ed1;
+  --color-white: #ffffff;
 }
 
 @layer components {
-    .cssContainer {
-        @apply w-11/12 max-w-7xl mx-auto py-12 md:py-16;
-    }
+  .cssContainer {
+    @apply w-11/12 max-w-7xl mx-auto py-12 md:py-16;
+  }
 
-    .header {
-        @apply flex flex-col text-center items-center justify-center gap-6 mb-8;
-    }
+  .header {
+    @apply flex flex-col text-center items-center justify-center gap-6 mb-8;
+  }
 
-    .linearText {
-        @apply bg-main-linear bg-clip-text text-transparent;
-    }
+  .linearText {
+    @apply bg-main-linear bg-clip-text text-transparent;
+  }
 
-    h1,
-    h2 {
-        font-weight: 800;
-    }
+  h1,
+  h2 {
+    font-weight: 800;
+  }
 
-    h1 {
-        font-size: clamp(2.5rem, 1.5rem + 2.5vw, 3.375rem);
-    }
+  h1 {
+    font-size: clamp(2.5rem, 1.5rem + 2.5vw, 3.375rem);
+  }
 
-    h2 {
-        font-size: clamp(2rem, 1.4286rem + 1.4286vw, 2.5rem);
-    }
+  h2 {
+    font-size: clamp(2rem, 1.4286rem + 1.4286vw, 2.5rem);
+  }
 
-    h3 {
-        font-size: 1.5rem;
-    }
+  h3 {
+    font-size: 1.5rem;
+  }
 
-    p {
-        font-size: 1rem;
-    }
+  p {
+    font-size: 1rem;
+  }
 }
 
 * {
-    font-family: "Geist", sans-serif;
+  font-family: "Geist", sans-serif;
+}
+
+.ribbon {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: -7%;
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+}
+
+.ribbon::after {
+  content: "AGENCIES";
+  position: absolute;
+  top: 33%;
+  left: 33%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background-color: #ff7800;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 5px 50px;
+  overflow: hidden;
 }

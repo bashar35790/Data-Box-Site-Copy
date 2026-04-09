@@ -64,7 +64,7 @@ const Addons = () => {
           </h2>
         </header>
         {/* Cards*/}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid items-center justify-center md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cardData.map((card) => (
             <AddonCard card={card}></AddonCard>
           ))}

@@ -21,7 +21,10 @@ const features = [
 const AgencyBanner = () => {
   return (
     <section id="AgencyBanner" className="bg-[#edf1fe]">
-      <div className="cssContainer flex flex-col xl:flex-row gap-8 lg:gap-12">
+      <div className="cssContainer py-20 relative flex flex-col xl:flex-row gap-8 lg:gap-12">
+        {/* Agency Ribbon */}
+        <div className="ribbon"></div>
+
         {/* Left Side */}
         <div className="w-full space-y-6">
           {/* Title */}
@@ -62,6 +65,7 @@ const AgencyBanner = () => {
             </p>
           </div>
         </div>
+
         {/*Right Side*/}
         <div className="w-full">
           <img src={bannerImage} alt="Banner image" className="w-full" />
