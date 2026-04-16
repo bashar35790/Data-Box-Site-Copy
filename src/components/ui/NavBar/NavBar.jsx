@@ -43,14 +43,14 @@ export default function NavBar() {
         className={`fixed top-0 z-50 left-0 right-0 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? "bg-white" : "bg-transparent"
           }`}
       >
-        <div className="w-11/12 max-w-7xl mx-auto flex items-center justify-between h-20">
+        <div className="w-11/12 max-w-7xl mx-auto flex items-center justify-between min-h-[5rem] py-2">
           {/* Logo */}
           <div className="shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <img
                 src={Logo}
                 alt="Logo"
-                className={`w-32 transition-all duration-300 ${useWhiteText && !isMobileMenuOpen ? "invert contrast-200" : ""}`}
+                className={`w-28 sm:w-32 transition-all duration-300 ${useWhiteText && !isMobileMenuOpen ? "invert contrast-200" : ""}`}
               />
             </Link>
           </div>

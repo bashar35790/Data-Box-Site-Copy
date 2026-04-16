@@ -51,6 +51,13 @@
 
 * {
   font-family: "Geist", sans-serif;
+  overflow-wrap: break-word; /* Ensure long words wrap */
+  word-break: break-word; /* For compatibility */
+}
+
+html, body {
+  min-height: 100%;
+  height: auto; /* Allow body to grow with content */
 }
 
 .ribbon {
